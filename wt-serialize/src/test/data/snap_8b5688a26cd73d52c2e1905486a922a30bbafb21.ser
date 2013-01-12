@@ -1,0 +1,6 @@
+Resultset from select: /mime-rest/services/search?query=båt&hits=10&offset=0&user=TYTORS&yalla_source=arkiv.FOLDER&source=saksmappe&facet:enable=false&header:enable=false
+-----BEGIN SERIALIZED java.lang.StringBuffer 8b5688a26cd73d52c2e1905486a922a30bbafb21-----
+rO0ABXNyABZqYXZhLmxhbmcuU3RyaW5nQnVmZmVyLwcH2erI6tMDAANJAAVj
+b3VudFoABnNoYXJlZFsABXZhbHVldAACW0N4cAAAAAAAdXIAAltDsCZmsOJd
+hKwCAAB4cAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHg=
+-----END SERIALIZED-----
