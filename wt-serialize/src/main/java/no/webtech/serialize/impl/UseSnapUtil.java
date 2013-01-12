@@ -23,16 +23,6 @@ import org.slf4j.LoggerFactory;
 public class UseSnapUtil {
 	
 	private static Logger logger = LoggerFactory.getLogger(UseSnapUtil.class);
-     
-	private static boolean isPropTrue(String prop){
-		String sc  = System.getProperty(prop);
-		return sc != null && sc.equals("true");
-	}
-	
-	private static boolean isPropValue(String prop, String value){
-		String sc  = System.getProperty(prop);
-		return sc != null && sc.equals(value);
-	}
 	
 	public static StringBuffer rvaToStringBuffer(Rvo rf) {
 		StringBuffer sb = new StringBuffer();

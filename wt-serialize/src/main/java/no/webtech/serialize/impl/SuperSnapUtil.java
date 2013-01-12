@@ -14,29 +14,6 @@ import no.webtech.enig.util.Base64Encoder;
 public class SuperSnapUtil {
 
 	
-	/**
-	 * Make a string pointing to where we was called from
-	 * @param delim
-	 * @return
-	 */
-	private static StringBuilder callStack(String delim) {
-		StackTraceElement[] cause = Thread.currentThread().getStackTrace();
-		StringBuilder sb = new StringBuilder();
-		String dlm="";
-		for (int i = 2; i < cause.length; i++, dlm=delim)
-			sb
-			.append(dlm)
-			.append(cause[i].getClassName())
-			.append(".")
-			.append(cause[i].getMethodName())
-			.append("()#")
-			.append(cause[i].getFileName())
-			.append("[")
-			.append(cause[i].getLineNumber())
-			.append("]");
-		
-		return sb;
-	}
 
 	/**
 	 * Utility to read a whole file into a byte buffer.
