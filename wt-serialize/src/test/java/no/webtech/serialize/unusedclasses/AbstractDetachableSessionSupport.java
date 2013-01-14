@@ -1,4 +1,4 @@
-package no.webtech.serialize.plainapi.notused;
+package no.webtech.serialize.unusedclasses;
 
 import java.io.Serializable;
 

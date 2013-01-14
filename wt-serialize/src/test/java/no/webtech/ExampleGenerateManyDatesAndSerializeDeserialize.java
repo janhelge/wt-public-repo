@@ -8,7 +8,8 @@ import no.webtech.serialize.impl.SuperSnapUtil;
 import no.webtech.serialize.impl.TheObject;
 
 public class ExampleGenerateManyDatesAndSerializeDeserialize {
-	String example = "-----BEGIN SERIALIZED java.util.Date[] comment-----\r\n"+
+	
+	private String example = "-----BEGIN SERIALIZED java.util.Date[] comment-----\r\n"+
 			"rO0ABXVyABFbTGphdmEudXRpbC5EYXRlO0MXJKAwAxjgAgAAeHAAAAAMc3IA\r\n"+
 			"DmphdmEudXRpbC5EYXRlaGqBAUtZdBkDAAB4cHcIAAABO5CH2ep4c3EAfgAC\r\n"+
 			"dwgAAAE7kIfd0nhzcQB+AAJ3CAAAATuQh+G6eHNxAH4AAncIAAABO5CH5aJ4\r\n"+

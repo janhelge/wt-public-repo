@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>no.webtech</groupId>
@@ -9,7 +10,16 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
+	<scm>
+		<url>https://github.com/janhelge/wt-public-repo</url>
+	</scm>
+	<description>
+		A module that serialize results from queries. 
+		If some result can be regared as a result from
+		a query and something called a session, and the result
+		is serializable, then this module is useful to you for
+		testing purposes
+	</description>
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -17,12 +27,12 @@
 			<version>1.6.1</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- 
+		<!--
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId> 
 			<version>1.2.14</version>
-		</dependency> 
+		</dependency>
 		-->
 		<dependency>
 			<groupId>commons-httpclient</groupId>
@@ -49,7 +59,7 @@
 					<target>1.5</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
@@ -88,4 +98,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>

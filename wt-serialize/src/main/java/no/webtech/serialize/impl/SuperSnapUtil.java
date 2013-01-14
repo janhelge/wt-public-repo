@@ -121,23 +121,5 @@ public class SuperSnapUtil {
 		return sb;
 	}
 	
-//	// FIXME Denne er bare til bruk i dfc-ser midlertidig for dette er refakturert
-//	// FIXME Skal fjernes etterhvert
-//	@Deprecated 
-//	private static String toSHA1(byte[] convertme) {
-//		MessageDigest md = null;
-//		try {
-//			md = MessageDigest.getInstance("SHA-1");
-//		} catch (NoSuchAlgorithmException e) {
-//			e.printStackTrace();
-//		}
-//		return byteArrayToHexString(md.digest(convertme));
-//	}
-//
-//	private static String byteArrayToHexString(byte[] b) {
-//		StringBuffer sb = new StringBuffer();
-//		for (int i = 0; i < b.length; i++)
-//			sb.append(Integer.toString((b[i] & 0xff) + 0x100, 16).substring(1));
-//		return sb.toString();
-//	}
+
 }

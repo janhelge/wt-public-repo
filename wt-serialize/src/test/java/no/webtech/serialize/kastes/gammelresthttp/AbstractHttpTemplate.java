@@ -21,7 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public abstract class AbstractHttpTemplate extends no.webtech.serialize.plainapi.notused.AbstractDetachableSessionSupport {
+public abstract class AbstractHttpTemplate extends no.webtech.serialize.unusedclasses.AbstractDetachableSessionSupport {
 	private static Logger logger = LoggerFactory.getLogger(AbstractHttpTemplate.class);
 
 	@Override
