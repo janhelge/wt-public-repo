@@ -45,10 +45,9 @@ public class UseSnapUtil {
 	}
 
 	public static Serializable fromFile(QueryHolder ql) {
-		String fileName = serializedObjectFileName(ql);
-		
+		String fileName = serializedObjectFileName(ql);		
 		byte[] ba = loadFromFile(fileName);
-		logger.debug("File: " + fileName + " Loaded buffer size: " + ba.length);
+		logger.debug("File: " + fileName + " Loaded buffer size: " + (ba!=null? ba.length:"<ba is null>"));
 		if (ba == null) return null;
 		return (Serializable) TheObject.createInstance(ba, 0).getObject();		
 	}
