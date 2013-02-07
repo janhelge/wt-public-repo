@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.NotSerializableException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.zip.GZIPOutputStream;
 
 import no.webtech.enig.util.Base64Encoder;
 
@@ -94,7 +95,8 @@ public class SuperSnapUtil {
 
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			ObjectOutputStream oos = new ObjectOutputStream(baos);
+			ObjectOutputStream oos = new ObjectOutputStream(new GZIPOutputStream(baos));
+					//new ObjectOutputStream(baos);
 			oos.writeObject(toBeSerialized);
 			oos.close();
 

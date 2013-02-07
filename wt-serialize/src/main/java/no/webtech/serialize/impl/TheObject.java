@@ -4,6 +4,7 @@ package no.webtech.serialize.impl;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.zip.GZIPInputStream;
 
 import no.webtech.enig.util.StackableBase64Decoder;
 
@@ -101,7 +102,7 @@ public class TheObject {
 //					" (ParmBufferLen:"+bufferLen +
 //					" parmbufferOffset:"+ bufferOffset+")");
 			
-			ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(dec.push(getBuffer()).extractAll()));
+			ObjectInputStream ois = new ObjectInputStream(new GZIPInputStream(new ByteArrayInputStream(dec.push(getBuffer()).extractAll())));
 			o = ois.readObject();
 			ois.close();
 		} catch (IOException e) {
