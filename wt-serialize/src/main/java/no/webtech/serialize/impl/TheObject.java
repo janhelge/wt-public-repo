@@ -3,8 +3,10 @@ package no.webtech.serialize.impl;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.util.zip.GZIPInputStream;
+import java.util.zip.ZipException;
 
 import no.webtech.enig.util.StackableBase64Decoder;
 
@@ -101,10 +103,23 @@ public class TheObject {
 //					" Delta:"+(iAllocatedWorkBufferLength-ba.length)+
 //					" (ParmBufferLen:"+bufferLen +
 //					" parmbufferOffset:"+ bufferOffset+")");
+			InputStream useIs = null;
+			byte[] all = dec.push(getBuffer()).extractAll();
+			try {
+				useIs = new GZIPInputStream(new ByteArrayInputStream(all));
+			} catch (ZipException z) {
+				// Retry without gzip, to be compatible with previous versions
+				useIs = new ByteArrayInputStream(all);
+			}			
+			if (useIs != null) {
+				ObjectInputStream ois = new ObjectInputStream(useIs);
+				o = ois.readObject();
+				ois.close();
+				return o;
+			}
+		} catch (ZipException z) {
+			// Retry without zip, to be compatible with previous versions
 			
-			ObjectInputStream ois = new ObjectInputStream(new GZIPInputStream(new ByteArrayInputStream(dec.push(getBuffer()).extractAll())));
-			o = ois.readObject();
-			ois.close();
 		} catch (IOException e) {
 			// never happens since object is only created when buffer exist
 			e.printStackTrace();
